@@ -1,0 +1,66 @@
+/* Ferð — a nyilvános oldal.
+   Egyetlen stíluslap, build nélkül. Ha ez valaha Astróvá nő (mint a Helsáé),
+   ez a fájl a kiindulás, nem a szemét. */
+
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --ink: #1b2a33;
+  --ink-soft: #56666f;
+  --line: #e2ded7;
+  --accent: #1f6f78;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10171c;
+    --surface: #162026;
+    --ink: #e7edf1;
+    --ink-soft: #9fb0ba;
+    --line: #26333c;
+    --accent: #5fb6bd;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+
+header.site { border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+header.site a { color: inherit; text-decoration: none; }
+header.site .name { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+header.site .tag { color: var(--ink-soft); margin-top: .25rem; }
+
+h1 { font-size: 1.9rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 .5rem; }
+h2 { font-size: 1.2rem; margin: 2.5rem 0 .75rem; letter-spacing: -0.01em; }
+h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
+
+p, li { color: var(--ink); }
+.lede { color: var(--ink-soft); margin: 0 0 2rem; }
+
+a { color: var(--accent); }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 3.5rem 0; }
+
+.short {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+.short p:first-child { margin-top: 0; }
+.short p:last-child { margin-bottom: 0; }
+
+footer.site { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem; }
+footer.site a { color: var(--ink-soft); }
+
+code { font-size: .9em; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: .1em .35em; }
